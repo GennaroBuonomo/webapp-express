@@ -16,6 +16,9 @@ app.get("/", (req, res) => {
   res.send("Rotta base per il mio blog")
 });
 
+//DEFINISCO LE ROTTE PERI I FILM
+app.use("/api/movies", movieRouter);
+
 //INDICO AL SERVER DI RESTARE IN ASCOLTO SULLA PORTA 3000
 app.listen(port, () => {
   console.log(`Server in ascolto sulla porta ${port}`)
