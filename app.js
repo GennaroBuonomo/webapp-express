@@ -9,3 +9,8 @@ const port = 3000
 app.get("/", (req, res) => {
   res.send("Rotta base per il mio blog")
 });
+
+//INDICO AL SERVER DI RESTARE IN ASCOLTO SULLA PORTA 3000
+app.listen(port, () => {
+  console.log(`Server in ascolto sulla porta ${port}`)
+})
