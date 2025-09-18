@@ -6,6 +6,8 @@ const app = express();
 //DEFINISCO IL NUMERO DELLA PORTA SU CUI DEVE GIRARE L'APPLICAZIONE
 const port = process.env.PORT
 
+app.use(express.static('public'));
+
 //DEFINISCO LA ROTTA BASE
 app.get("/", (req, res) => {
   res.send("Rotta base per il mio blog")
