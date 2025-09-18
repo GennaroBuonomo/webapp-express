@@ -6,6 +6,9 @@ const app = express();
 //DEFINISCO IL NUMERO DELLA PORTA SU CUI DEVE GIRARE L'APPLICAZIONE
 const port = process.env.PORT
 
+//IMPORTO IL ROUTER 
+const movieRouter = require("./routers/movieRouter.js");
+
 app.use(express.static('public'));
 
 //DEFINISCO LA ROTTA BASE
