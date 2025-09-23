@@ -2,6 +2,9 @@
 const express = require('express');
 const connection = require('./data/db.js');
 
+//Importo il middleware per i path delle imgs
+const imagePathMiddleware = require('./middlewares/imagePathMiddleware.js');
+
 // IMPORTO IL PACCHETTO CORS
 const cors = require('cors')
 // CREO L'ISTANZA DELL'APP ATTRAVERSO IL METODO EXPRESS CHE HO IMPORTATO
@@ -16,6 +19,8 @@ const movieRouter = require("./routers/movieRouter.js");
 app.use(cors({origin: process.env.FE_APP}))
 
 app.use(express.static('public'));
+
+app.use(imagePathMiddleware);
 
 //DEFINISCO LA ROTTA BASE
 app.get("/", (req, res) => {
