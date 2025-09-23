@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 //Importo il middleware per i path delle imgs
-const imagePathMiddleware = require('./middlewares/imagePathMiddleware');
+//const imagePathMiddleware = require('./middlewares/imagePathMiddleware');
 
 
 // CREO L'ISTANZA DELL'APP ATTRAVERSO IL METODO EXPRESS CHE HO IMPORTATO
@@ -22,7 +22,7 @@ app.use(cors({origin: process.env.FE_APP}));
 
 app.use(express.static('public'));
 
-app.use(imagePathMiddleware);
+//app.use(imagePathMiddleware);
 
 //DEFINISCO LA ROTTA BASE
 app.get("/", (req, res) => {
