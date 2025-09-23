@@ -6,7 +6,7 @@ const connection = require('./data/db.js');
 const imagePathMiddleware = require('./middlewares/imagePathMiddleware.js');
 
 // IMPORTO IL PACCHETTO CORS
-const cors = require('cors')
+const cors = require('cors');
 // CREO L'ISTANZA DELL'APP ATTRAVERSO IL METODO EXPRESS CHE HO IMPORTATO
 const app = express();
 //DEFINISCO IL NUMERO DELLA PORTA SU CUI DEVE GIRARE L'APPLICAZIONE
@@ -16,7 +16,7 @@ const port = process.env.PORT
 const movieRouter = require("./routers/movieRouter.js");
 
 //REGISTRO IL PACCHETTO PER L USO
-app.use(cors({origin: process.env.FE_APP}))
+app.use(cors({origin: process.env.FE_APP}));
 
 app.use(express.static('public'));
 
