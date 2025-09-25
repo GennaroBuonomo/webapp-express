@@ -24,6 +24,8 @@ app.use(cors({origin: process.env.FE_APP}));
 
 app.use(imagePathMiddleware);
 
+app.use(express.json());
+
 //DEFINISCO LA ROTTA BASE
 app.get("/", (req, res) => {
   res.send("Rotta base per il mio blog")
