@@ -52,7 +52,26 @@ const show = (req, res) => {
   })
 }
 
+const storeReview = (req, res) => {
+  //Recupero l'id del film per il quale voglio scrivere una recensione 
+  const { id } = req.params
+
+  //Recupero i dati della form
+  const { name, text, vote } = req.body;
+
+  //Preparo la query
+  const sql = "INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)";
+
+  //Eseguo la query
+  connection.query(sql,[id, name, vote, text], (err, result) => {
+    if(err) return res.status(500).json({result: false, message: "Errore durante l'inserimento della recensione"});
+
+    res.status(201).json({result: true, message: "Recensione inserita correttamente"});
+  })
+}
+
 module.exports ={
   index,
-  show
+  show,
+  storeReview
 }
